@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .about-hero {
+        background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+        border-radius: 16px;
+        color: white;
+        padding: 80px 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+    .about-hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 80%);
+        pointer-events: none;
+    }
+    .about-title {
+        font-size: 3.2rem;
+        font-weight: 700;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    .about-subtitle {
+        font-size: 1.25rem;
+        color: #ddd6fe;
+        max-width: 700px;
+        margin: 0 auto;
+        font-weight: 300;
+    }
+    .value-card {
+        background: white;
+        border: none;
+        border-radius: 16px;
+        padding: 30px;
+        height: 100%;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 15px -3px rgba(124, 58, 237, 0.03);
+        border: 1px solid #f3e8ff;
+    }
+    .value-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(124, 58, 237, 0.1), 0 10px 10px -5px rgba(124, 58, 237, 0.04);
+        border-color: #d8b4fe;
+    }
+    .value-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background: #f5f3ff;
+        color: #7c3aed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+    }
+    .value-card:hover .value-icon {
+        background: #7c3aed;
+        color: white;
+        transform: rotate(10deg);
+    }
+    .value-title {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: #1e1b4b;
+        margin-bottom: 12px;
+    }
+    .value-text {
+        color: #6b7280;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    .quote-section {
+        background: #ffffff;
+        border-left: 5px solid #7c3aed;
+        border-radius: 8px;
+        padding: 40px;
+        margin: 50px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    .quote-text {
+        font-size: 1.25rem;
+        font-style: italic;
+        color: #4b5563;
+        line-height: 1.8;
+    }
+    .quote-author {
+        margin-top: 15px;
+        font-weight: 600;
+        color: #7c3aed;
+    }
+</style>
+
+<div class="container py-3">
+    <!-- Hero Banner -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="about-hero">
+                <h1 class="about-title">About Your Wardrobe</h1>
+                <p class="about-subtitle">With the trendiest, freshest, and most unique styles from across India and the world, our wardrobe invites you to express your personal style fearlessly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Values Section -->
+    <div class="row g-4 mt-2">
+        <div class="col-md-4">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <h3 class="value-title">Capsule Collections</h3>
+                <p class="value-text">If there’s an occasion to express your personal style, we’ve got a capsule collection to match. Shopping for a specific mood, event, or style story has never been easier or more exciting.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fa-solid fa-paintbrush"></i>
+                </div>
+                <h3 class="value-title">The Indie Experience</h3>
+                <p class="value-text">Our Indie styles are wearable art. They are carefully handpicked, ensuring only the most authentic, handcrafted pieces by skilled artisans across the country make the cut.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+                <h3 class="value-title">Fearless Expression</h3>
+                <p class="value-text">Why let a world that loves to police your wardrobe get the upper hand? Go ahead and wear exactly what you please. In great style and personal expression, there are no regrets.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statement Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="quote-section">
+                <p class="quote-text">
+                    "So the next time someone says 'Oh, that dress is too bold', 'Are you sure you’re the right size for this?', or 'Act your age and wear something else', remember that your style is your personal canvas. Express yourself with absolute confidence and optimism that cannot be easily shaken."
+                </p>
+                <div class="quote-author">— The Wardrobe Design Philosophy</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

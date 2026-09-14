@@ -1,0 +1,82 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+<div class="fs-2 text-center">Women's <b class="text-pcolor">Product
+    <i class="fa-solid fa-cart-shopping"></i>
+</b></div>
+
+<div class="row">
+    <div class="col-sm-9">
+        <div class="row">
+        <!-- start product-->
+        <!-- start product-->
+  {% for a in data %}
+    <div class="col-sm-3 my-2">
+         <div class="card product-card">
+             <div class="product-img-container">
+                 <img src="/{{a.ppic}}" class="product-img"/>
+             </div>
+             <div class="card-body">
+                 <h5 class="product-name">{{a.pcategory}}</h5>
+                 
+                 <div class="price-row">
+                     <span class="old-price"><s>{{a.pprice}}/-</s></span>
+                     <span class="new-price">{{a.dprice}}/-</span>
+                 </div>
+                 
+                 <div class="badge-swatch-row d-flex justify-content-between align-items-center mt-3">
+                     <span class="size-badge">{{a.psize}}</span>
+                     <div class="color-swatch" style="background:{{a.pcolor}};"></div>
+                 </div>
+
+                 <span class="delivery-badge">{{a.pdel}}</span>
+                 
+                 <div class="card-actions-row d-flex justify-content-between gap-2 mt-3">
+                     <a href="/user/viewproduct?abc={{a.id}}" class="btn-order-now">ORDER NOW</a>
+                     <a href="/user/mcart?pid={{a.id}}" class="btn-add-cart">CART <i class="fa-solid fa-cart-shopping"></i></a>
+                 </div>
+                 
+                 <div class="mt-2 text-center">
+                     <span class="product-date">Date: {{a.pdate}}</span>
+                 </div>
+             </div>
+         </div>
+    </div>
+  {% endfor %}
+    <!-- end product-->
+        <!-- end product-->
+            </div>
+
+    </div>
+    <div class="col-sm-3">
+        <ul class="list-group">
+            <li class="list-group-item fs-4 bg-bcolor text-light
+            fw-bold text-center">Product Category </li>
+       {% for x in cats %}
+            <li class="list-group-item">
+           <!-- start card -->
+           <div class="card w-100">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{x.Cpic}}" style="max-height:70px" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+          <a href="/user/womens?msg={{x.id}}" class="text-dark"
+             style="text-decoration:none;">
+        <h5 class="card-title">{{x.Name}}</h5>
+              </a>
+         </div>
+    </div>
+  </div>
+</div>
+           <!-- end card -->
+
+       </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

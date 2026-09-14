@@ -1,0 +1,130 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+<script src="{% static 'js/jquery-3.6.1.min.js'%}"></script>
+<script>
+  $(document).ready(function(){
+  $("#btne").click(function(){
+  $(".uform").slideToggle(4000)
+
+
+  })
+
+  })
+</script>
+
+
+{% if not request.session.userid %}
+
+<script>
+    alert('you have to login first....')
+    location.href="/user/signin"
+    $(document).ready(function(){})
+</script>
+{% endif %}
+<div class="fs-2 text-center">My<b class="text-pcolor">Profile
+    <i class="fa-solid fa-user"></i>
+</b></div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row">
+            <!-- start class -->
+            {% for x in mdata%}
+            <div class="card mb-3 w-100">
+  <div class="row g-0">
+    <div class="col-md-4 p-3">
+      <img src="/{{x.Ppic}}" style="min-height:200px;" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{x.Name}}</h5></br></br>
+        <p class="card-text"><b>Mobile</b>{{x.Mobile}}</br></br>
+                              <b>Email:</b>{{x.Email}}</br></br>
+            <b>Password:</b>{{x.Passwd}}</br></br>
+                               <b>Address:</b>{{x.Address}}</br></br>
+            <a href="#" id="btne" class="btn bg-pcolor">Edit profile</a>
+         </p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+            {% endfor %}
+            <!-- end class -->
+        </div>
+
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<!--form-->
+<style>
+    .txt{height:50px;margin-bottom:15px;}
+    .txta{height:80px;margin-bottom:15px;}
+    .uform{
+    display:none;
+    }
+
+</style>
+
+
+<div class="row">
+
+    <div class="col-sm-8 mx-auto uform">
+        <div class="row">
+
+            <div class="col-sm-7">
+                <form method="POST" enctype="multipart/form-data">
+                 {% csrf_token %}
+                    <input type="text" class="txt form-control" name="name" required placeholder="Enter name">
+                    <input type="password"class="txt form-control" name="passwd" required placeholder="Enter password">
+                    <input type="number" class="txt form-control"name="mob" required placeholder="Enter number">
+                    <input type="file"class="txt form-control" name="pic" required>
+                    <textarea placeholder="enter address" name="address" class="form-control class txta" required></textarea>
+                    <input type="submit" value="register now" class="btn text-light bg-pcolor">
+                </form>
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--end form-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

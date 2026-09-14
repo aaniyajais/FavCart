@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'images/sale.png/' %}"rel="icon"/>
+    <title>FAV CART || ONLINE SHOPPING</title>
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css'%}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #faf5ff;
+            color: #1f2937;
+        }
+        .icolor{color:white;}
+        .bg-bcolor
+        {
+        background:#1f1f1f; /* slightly darker, richer grey */
+        }
+        .ufooter1 {
+            height: 220px;
+            margin-top: 78px;
+            font-size: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        .ufooter1:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .bg-pcolor
+        {
+         background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
+        }
+        .text-pcolor{
+          color: #7c3aed !important;
+        }
+        #menu ul li a
+        {
+        color:white;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: color 0.2s;
+        }
+        #menu ul li a:hover {
+            color: #d8b4fe !important;
+        }
+        .ufooter{
+        min-height:300px;
+        border-bottom:1px solid rgba(255,255,255,0.1);
+        background: #18181b !important;
+        }
+        .bfooter{
+        min-height:50px;
+        font-size:22px;
+        text-align:center;
+        line-height:50px;
+        color:white;
+        background: #09090b !important;
+        }
+        .bfooter a{
+        text-decoration:none;
+        transition: color 0.2s;
+        }
+        .bfooter a:hover{
+        color:#d8b4fe !important;
+        }
+        .w{
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("{% static 'images/girls.jpg'%}");
+        background-size:100% 100%;
+        min-height:220px;
+        padding-top:100px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+        }
+        .m{
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("{% static 'images/shirtsmen1.jpg'%}");
+        background-size:100% 100%;
+        min-height:220px;
+        padding-top:100px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+        }
+        .k{
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("{% static 'images/kids.jpg'%}");
+        background-size:100% 100%;
+        min-height:220px;
+        padding-top:100px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+        }
+        .w:hover, .m:hover, .k:hover {
+            transform: scale(1.02);
+        }
+        .btn1
+        {
+        background: #0d9488 !important; /* modern teal */
+        border: none !important;
+        color: white !important;
+        border-radius: 30px !important;
+        padding: 10px 28px !important;
+        font-weight: 500;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        }
+        .btn1:hover {
+            background: #0f766e !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(15, 118, 110, 0.3);
+        }
+        .product{
+        min-height:500px;
+        }
+        .text-decoration-none-hover {
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        .text-decoration-none-hover:hover {
+            color: #d8b4fe !important;
+            text-decoration: underline !important;
+        }
+        .btn.bg-pcolor {
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(124, 58, 237, 0.1);
+        }
+        .btn.bg-pcolor:hover {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(124, 58, 237, 0.35);
+        }
+        .card {
+            border: none !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+            transition: all 0.3s ease !important;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(124, 58, 237, 0.15) !important;
+        }
+        .card-img-top, .img-card-top {
+            transition: transform 0.5s ease;
+        }
+        .card:hover .card-img-top, .card:hover .img-card-top {
+            transform: scale(1.05);
+        }
+        .dropdown-menu {
+            background-color: #5b21b6 !important;
+            border: none !important;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+            border-radius: 8px !important;
+        }
+        .dropdown-item {
+            color: white !important;
+            transition: background 0.2s;
+        }
+        .dropdown-item:hover {
+            background-color: #7c3aed !important;
+        }
+        /* Custom scrollbar for modern aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #faf5ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c084fc;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+    </style>
+    <link href="{% static 'css/redesign.css'%}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row top-info-bar text-light text-center">
+        <div class="col-sm-4">
+            <i class="fa-solid fa-phone"></i>
+            +916306904465 | +919991908100
+        </div>
+        <div class="col-sm-4">
+            Welcome to Your Wardrobe
+
+            <i class="fa-solid fa-cart-arrow-down"></i>
+        </div>
+        <div class="col-sm-4">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-twitter"></i>
+
+        </div>
+    </div>
+<div class="row header main-header py-3 text-center align-items-center">
+    <div class="col-sm-4 fs-2 text-center">
+        <a href="/user/index/" class="main-logo">
+            Your <span>Wardrobe</span>
+            <i class="fa-solid fa-cart-arrow-down"></i>
+        </a>
+    </div>
+    <div class="col-sm-4 d-flex justify-content-center align-items-center">
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="search">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+
+    <div class="col-sm-4 d-flex align-items-center justify-content-center gap-2">
+        <a href="/user/showcart/" class="btn cart-button">
+            Cart <i class="fa-solid fa-cart-arrow-down"></i>
+            <b class="badge cart-badge">
+                {{cart}}
+            </b>
+        </a>        {% if request.session.userid %}
+                    <b class="text-pcolor ms-2">{{request.session.userid}}</b>
+        <img src="/{{request.session.userpic}}" style="max-height:50px; border-radius:50%;" class="img-thubnail">
+            {% else %}
+                    <b class="text-pcolor ms-2">Guest User</b>
+                    <img src="{% static 'images/girls.jpg'%}" style="max-height:50px; border-radius:50%;" class="img-thubnail" >
+            {% endif %}
+    </div>
+</div>
+<div class="row menu main-menu-container" style="min-height:45px;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+<!-- start menu -->
+        <nav class="navbar navbar-expand-lg" id="menu">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/index/"><i class="fa-solid fa-house"></i>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/about/"> <i class="fa-solid fa-circle-info"></i> About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="product" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bag-shopping"></i>
+            Product
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item bg-pcolor" href="/user/mens/">Men's</a></li>
+            <li><a class="dropdown-item bg-pcolor" href="/user/womens/">Women's</a></li>
+            <li><a class="dropdown-item bg-pcolor" href="/user/kids/">Kid's</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/myorder/"><i class="fa-solid fa-cart-shopping"></i>My Orders</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/enquiry/"><i class="fa-solid fa-circle-question"></i> Enquiry</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/signup/"><i class="fa-solid fa-user-plus"></i> Sign up</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/myprofile/"><i class="fa fa-user" aria-hidden="true"></i> My Profile</a>
+        </li>
+          {% if request.session.userid %}
+           <li class="nav-item">
+           <a class="nav-link" href="/user/signout"><i class="fa-solid fa-circle-user"></i> Signout</a>
+           </li>
+          {% else %}
+           <li class="nav-item"><a class="nav-link" href="/user/signin"><i class="fa-solid fa-circle-user"></i> Signin
+           </a>
+           </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+        <!-- end menu -->
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
+
+<div class="row product">
+    <div class="col-sm-12 py-5">
+        {% block content %}
+            {% endblock %}
+    </div>
+</div>
+<div class="row bigsale"></div>
+<div class="row message"></div>
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Contact Us -->
+        <div class="footer-column">
+            <h4 class="footer-heading">CONTACT US</h4>
+            <div class="footer-contact-info">
+                Plot No-43, Behind H.P Petrol Pump,<br>
+                Tedhi Pulia Ring Rd Sector 5,<br>
+                Vikas Nagar, Lucknow,<br>
+                Uttar Pradesh 226022
+                <p class="footer-contact-details">
+                    <i class="fa-solid fa-phone"></i> +916306904465<br>
+                    <i class="fa-solid fa-phone"></i> +919991908100<br>
+                    <i class="fa-solid fa-envelope"></i> aaniyajaiswal831@gmail.com
+                </p>
+            </div>
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-column">
+            <h4 class="footer-heading">OUR SERVICES</h4>
+            <div class="footer-links-list">
+                <a href="/user/about/">About us</a>
+                <a href="/user/myorder/">Order History</a>
+                <a href="#">Return</a>
+                <a href="/user/terms/">Terms & Conditions</a>
+                <a href="/user/showcart/">Cart</a>
+            </div>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="footer-column text-center">
+            <h4 class="footer-heading">FOLLOW US</h4>
+            <div class="footer-social-icons">
+                <a href="#" class="social-icon-circle"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon-circle"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-icon-circle"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="social-icon-circle"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom-bar">
+        <div class="footer-bottom-left">
+            Developed by: <a href="#">Aaniya Jaiswal</a>
+        </div>
+        <div class="footer-bottom-right">
+            &copy; Copyright to: <a href="https://www.techpile.in" target="_blank">Techpile Technology Pvt.</a>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+</html>

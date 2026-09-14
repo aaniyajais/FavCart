@@ -1,0 +1,148 @@
+{% extends 'base.html'%}
+{% block content %}
+<style></style>
+ <div class="fs-2 text-center">Contact <b class="text-pcolor">US <i class="fa-solid fa-location-dot"></i> </b></div>
+<div class="container-fluid">
+
+
+     <div class="row">
+        <div class="col-sm-12 ">
+         <!DOCTYPE html>
+<html>
+  <head>
+    <title>form</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color:purple;
+      }
+      .ef{color:white;text-align:center;}
+      h1 {
+      margin: 0 0 20px;
+      font-weight: 400;
+      color:purple;
+      }
+      p {
+      margin: 0 0 5px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background:purple;
+      }
+      form {
+      padding: 25px;
+      margin: 25px;
+      box-shadow: 0 2px 5px #f5f5f5;
+      background: purple;
+      }
+
+      input, textarea {
+      width: calc(100% - 18px);
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #1c87c9;
+      outline: none;
+      }
+      input::placeholder {
+      color: #666;
+      }
+      button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #purple;
+      font-size: 16px;
+      font-weight: 400;
+      color: purple;
+      }
+      #message{color:white;}
+      button:hover {
+      background:black;
+      }
+      @media (min-width: 568px) {
+      .main-block {
+      flex-direction: row;
+      }
+      .left-part, form {
+      width: 50%;
+      }
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block  ">
+      <div class="left-part alert alert-info">
+          <h2>
+              Name is:{{Name}}</br>
+              Email is:{{Email}}</br>
+              Mobile is:{{Mobile}}</br>
+              Message is:{{Message}}</br>
+
+
+
+          </h2>
+
+      </div>
+        <div class="row">
+
+            <div class="col-sm-12">
+                {% if m %}
+                <div class="alert alert-success">MESSAGE SENT SUCCESSFULLY</div>
+                {% endif %}
+
+
+            </div>
+
+
+        </div>
+      <form method="POST">
+          {% csrf_token %}
+        <h1 class="ef">Enquiry Form</h1>
+        <div class="info">
+         <i class="fa fa-user  icolor" aria-hidden="true"></i>
+             <input class="fname form-control " type="text" name="name" placeholder="Full name" required>
+         <i class="fa fa-envelope icolor" aria-hidden="true"></i>
+             <input class="form-control" type="text" name="email" placeholder="Email" required>
+            <i class="fa fa-phone-square icolor" aria-hidden="true"></i>
+
+          <input type="text" class="form-control" name="mob" placeholder="Phone number" required  >
+
+        </div>
+
+
+        <p id="message">Message</p>
+        <div>
+          <textarea name="msg" class="form-control"  placeholder="message" rows="4" required ></textarea>
+        </div>
+        <button type="submit" class="form-control"  href="/">Submit</button>
+      </form>
+    </div>
+  </body>
+</html></div>
+     </div>
+</div>
+
+<div class="row map">
+    <center>
+        <div class="fs-2 fw-3">MAP
+        <i class="text-pcolor fa-solid fa-location-dot"></i>
+        </div>
+    </center>
+    <div class="col-sm-12">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.1893760745406!2d80.96113191452027!3d26.89748431722187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995785d5f7f1a5%3A0xffa47f1efe103f0d!2sTechpile%20Technology%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1662129937712!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+
+{% endblock %}

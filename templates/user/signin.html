@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    .txt{height:50px;margin-bottom:15px;}
+    .txta{height:80px;margin-bottom:15px;}
+
+</style>
+
+
+<div class="fs-2 text-pcolor text-center"/>SIGN IN <b class="">HERE..</b>
+<i class="fa-solid fa-cart-shopping "></i></div>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <form method="post" >
+            {% csrf_token %}
+            <input type="email" class="form-control"required name="email"></br>
+            <input type="password" class="form-control"required name="passwd"></br>
+            <input type="submit" value="log in" class="btn text-light bg-pcolor"></br>
+
+
+</form>
+
+    </div>
+    <div class="col-sm-4"></div>
+
+
+
+
+
+
+
+
+
+    </div>
+{% endblock %}

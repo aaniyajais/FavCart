@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .terms-hero {
+        background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+        border-radius: 16px;
+        color: white;
+        padding: 60px 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+    .terms-hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 80%);
+        pointer-events: none;
+    }
+    .terms-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+    }
+    .terms-subtitle {
+        font-size: 1.1rem;
+        color: #ddd6fe;
+        font-weight: 300;
+    }
+    .accordion-item {
+        border: 1px solid #f3e8ff !important;
+        border-radius: 12px !important;
+        margin-bottom: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        transition: all 0.3s ease;
+    }
+    .accordion-item:hover {
+        box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.08);
+        border-color: #d8b4fe !important;
+    }
+    .accordion-button {
+        font-weight: 600;
+        color: #1e1b4b !important;
+        background-color: white !important;
+        padding: 20px 25px;
+        box-shadow: none !important;
+        transition: all 0.2s ease;
+    }
+    .accordion-button:not(.collapsed) {
+        background-color: #f5f3ff !important;
+        color: #7c3aed !important;
+    }
+    .accordion-button::after {
+        filter: hue-rotate(260deg);
+    }
+    .accordion-body {
+        padding: 25px;
+        color: #4b5563;
+        line-height: 1.7;
+        font-size: 0.98rem;
+        background-color: #faf5ff;
+    }
+    .last-updated {
+        color: #9ca3af;
+        font-size: 0.9rem;
+        margin-top: 30px;
+        text-align: center;
+    }
+</style>
+
+<div class="container py-3">
+    <!-- Hero Header -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="terms-hero">
+                <h1 class="terms-title">Terms & Conditions</h1>
+                <p class="terms-subtitle">Please read these terms and conditions carefully before using our services.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion Section -->
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="accordion" id="termsAccordion">
+                
+                <!-- Section 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            1. Introduction & Acceptance of Terms
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#termsAccordion">
+                        <div class="accordion-body">
+                            Welcome to <strong>Your Wardrobe</strong>. By accessing or using our website, purchasing products, or engaging with our platform, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not access or use our services.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2. User Registration & Account Security
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#termsAccordion">
+                        <div class="accordion-body">
+                            To purchase items or access certain features (like managing orders and viewing carts), you must register an account with us. You agree to provide accurate, complete, and updated information. You are solely responsible for maintaining the confidentiality of your credentials and password. Any activity on your account is your responsibility.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            3. Products, Pricing & Payment
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#termsAccordion">
+                        <div class="accordion-body">
+                            We strive to represent our products (clothing styles, colors, sizes) as accurately as possible. However, actual colors may vary slightly depending on your screen settings. All prices are listed in Indian Rupees (INR) and are subject to change without notice. We reserve the right to modify or discontinue products at any time.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            4. Shipping & Delivery
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#termsAccordion">
+                        <div class="accordion-body">
+                            We make every effort to ship orders within 12 hours of payment confirmation. While we aim for delivery on time, delivery periods are estimates and actual delivery dates may vary based on carrier timelines and shipping destinations.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            5. Returns & Exchange Policy
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#termsAccordion">
+                        <div class="accordion-body">
+                            Your satisfaction is our priority. We offer exchanges on product orders within 30 days of purchase. The items must be returned in their original packaging, unused, unwashed, and with all tags intact. Returns and exchanges are subject to inspection upon receipt.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            6. Intellectual Property
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#termsAccordion">
+                        <div class="accordion-body">
+                            All content on this website, including but not limited to text, graphics, logos, images, UI layouts, and code, is the property of <strong>Your Wardrobe</strong> or its content suppliers and is protected by copyright laws. You may not reproduce, distribute, or modify any content without explicit written consent.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <p class="last-updated">Last Updated: June 5, 2026</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+view product
+{% endblock %}
+{% block content %}
+<center><div class="fs-2 ">your selected <b class="text-pcolor">product</b>
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</div> </center>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row">
+            {% for a in pdata %}
+            <div class="col-sm-12">
+                <!--start card-->
+                <div class="card mb-3 mb-3 w-100">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{a.ppic}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">/{{a.pcategory}}</h5>
+
+        <p class="card-text">/{{a.pdes}}</p>
+        <p class="card-text">
+            <i class="fa-solid fa-indian-rupee sign"></i>
+            <span class="text-danger"><s>{{a.pprice}}/-</s></span>
+            <span class="text-success">{{a.dprice}}/-</span><b>size:</b>
+            <span class="btn btn-sm bg-pcolor text-dark">{{a.psize}}</span>
+
+            <div style="height:35px; width:35px;;border-radius:3px;"></div>
+
+        </p>
+          <p class="card-text">
+              <a href="/user/mcart?pid={{a.id}}" class="btn btn-sm-pcolor">ADD TO CART
+                  <i class="text-pcolor fa-solid fa-cart-shopping"></i>
+              </a>
+              <a href="/user/myordr?msg={{a.id}}" class="btn btn-sm bg-pcolor text-light">
+                ORDER NOW
+            </a>
+              <i class="fa-solid fa-calendar-days"></i>
+
+              <small class="text-muted">{{a.pdate}}</small>
+              {{a.pdel}}
+
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+                <!--end card-->
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+<div class="col-sm-2"></div>
+</div>
+{% endblock %}
