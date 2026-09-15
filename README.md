@@ -4,9 +4,15 @@ A Django-based e-commerce web application with user authentication, product brow
 
 ## Overview
 
-FavCart is a full-stack e-commerce project built with Django and SQL. It provides a complete shopping workflow where users can browse products, manage their cart, place orders, view their order history, and manage their profile.
+## Overview
+
+FavCart is a full-stack e-commerce web application built with Django. It provides a complete shopping workflow where users can register and log in, browse products, manage their cart, place orders, view order history, and manage their profile.
 
 The project was developed as part of my technical training and has been cleaned up and secured for portfolio presentation.
+
+## Live Demo
+
+🔗 [Visit FavCart Live Demo](https://favcart-cye6.onrender.com/)
 
 ## Features
 
@@ -37,7 +43,7 @@ The project was developed as part of my technical training and has been cleaned 
 
 **Database**
 - SQLite for local development
-- PostgreSQL planned for production deployment
+- PostgreSQL for production
 
 **Tools**
 - Git
